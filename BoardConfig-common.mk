@@ -80,6 +80,7 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
 	system \
 	system_dlkm \
+	vendor_dlkm \
 	system_ext \
 	product \
 	vbmeta_system
@@ -231,6 +232,11 @@ BOARD_SUPER_PARTITION_ERROR_LIMIT := 8006926336
 BOARD_USES_SYSTEM_DLKMIMAGE := true
 BOARD_SYSTEM_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
+
+# Build a separate vendor_dlkm partition
+BOARD_USES_VENDOR_DLKMIMAGE:= true
+BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
 #
 # AUDIO & VOICE
