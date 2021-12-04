@@ -81,6 +81,8 @@ AB_OTA_PARTITIONS += \
 	system \
 	system_dlkm \
 	vendor_dlkm \
+	vendor \
+	vbmeta_vendor \
 	system_ext \
 	product \
 	vbmeta_system
@@ -164,6 +166,13 @@ BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
+# Enable chain partition for vendor.
+BOARD_AVB_VBMETA_VENDOR := vendor
+BOARD_AVB_VBMETA_VENDOR_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_VBMETA_VENDOR_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 3
+
 # Enable chained vbmeta for boot images
 BOARD_AVB_BOOT_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_BOOT_ALGORITHM := SHA256_RSA2048
@@ -197,6 +206,9 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 
 # persist.img
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := f2fs
+
+# vendor.img
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 ########################
 # Video Codec
