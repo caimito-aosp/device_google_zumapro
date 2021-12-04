@@ -319,6 +319,11 @@ PRODUCT_VENDOR_PROPERTIES += \
 DEVICE_MANIFEST_FILE := \
 	device/google/zumapro/manifest.xml
 
+# additional Manifests
+DEVICE_MANIFEST_FILE += \
+    device/google/zumapro/android.hardware.security.rkp-service.citadel.xml \
+    device/google/zumapro/manifest_radio_ds.xml
+
 ifneq (,$(filter aosp_%,$(TARGET_PRODUCT)))
 DEVICE_MANIFEST_FILE += \
 	device/google/zumapro/manifest_media_aosp.xml
