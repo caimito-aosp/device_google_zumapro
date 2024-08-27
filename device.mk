@@ -67,14 +67,12 @@ ifeq ($(USE_PIXEL_GRALLOC),true)
 	PRODUCT_SOONG_NAMESPACES += hardware/google/gchips/GrallocHAL
 endif
 
-# TODO(b/272725898): Needs to check with owner later
-$(warning hardware/google/graphics/zuma set to zuma on zumapro target)
 PRODUCT_SOONG_NAMESPACES += \
 	hardware/google/av \
 	hardware/google/gchips \
 	hardware/google/gchips/gralloc4 \
 	hardware/google/graphics/common \
-	hardware/google/graphics/zuma \
+	hardware/google/graphics/zumapro \
 	hardware/google/interfaces \
 	hardware/google/pixel \
 	device/google/zumapro \
@@ -857,9 +855,7 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
 	trusty_metricsd
 
-# TODO(b/272725898): Needs to check with owner later
-$(warning displaycolor_platform set to zuma on zumapro target)
-$(call soong_config_set,google_displaycolor,displaycolor_platform,zuma)
+$(call soong_config_set,google_displaycolor,displaycolor_platform,zumapro)
 PRODUCT_PACKAGES += \
 	android.hardware.composer.hwc3-service.pixel \
 	libdisplaycolor \
