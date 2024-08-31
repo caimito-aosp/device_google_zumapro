@@ -749,8 +749,15 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.1.brightness.dimming.usage?
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.sf.native_mode=2
+
+# Display calibration files
 PRODUCT_COPY_FILES += \
-	device/google/zumapro/display/display_colordata_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_cal0.pb
+	device/google/zumapro/display/display_colordata_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_cal0.pb \
+	device/google/zumapro/display/display_colordata_google-km4_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_google-km4_cal0.pb \
+	device/google/zumapro/display/display_golden_external_display_cal2.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_external_display_cal2.pb \
+	device/google/zumapro/display/display_golden_google-km4_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-km4_cal0.pb \
+	device/google/zumapro/display/panel_config_google-km4_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/panel_config_google-km4_cal0.pb \
+	device/google/zumapro/display/panel_ctrl_google-km4_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/panel_ctrl_google-km4_cal0.pb
 
 # limit DPP downscale ratio
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.hwc.dpp.downscale=4
