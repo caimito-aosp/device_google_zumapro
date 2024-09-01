@@ -63,3 +63,22 @@ ifeq ($(TARGET_PREBUILT_PIXELAPPS), true)
         SystemUIGoogleOverlayZumapro \
         SettingsGoogleOverlayZumapro
 endif
+
+# Product sysconfigs
+PRODUCT_PACKAGES += \
+    adaptivecharging \
+    allowlist_com.android.omadm.service \
+    dreamliner \
+    GoogleCamera_6gb_or_more_ram \
+    quick_tap \
+    pixel_experience_2021_midyear \
+    pixel_experience_2021 \
+    pixel_experience_2022_midyear \
+    pixel_experience_2022 \
+    pixel_experience_2023_midyear \
+    pixel_experience_2023 \
+    pixel_experience_2024_midyear \
+    pixel_experience_2024 \
+    preinstalled-packages-product-pixel-2023-and-newer \
+    satellite_sos \
+    vendor-apex-allowlist
