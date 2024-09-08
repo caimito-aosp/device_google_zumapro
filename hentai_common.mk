@@ -53,3 +53,13 @@ PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 # Enforce dark boot animation
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.boot.theme=1
+
+# PixelApps
+$(call inherit-product, vendor/pixelapps/config.mk)
+
+# PixelApps overlays
+ifeq ($(TARGET_PREBUILT_PIXELAPPS), true)
+    PRODUCT_PACKAGES += \
+        SystemUIGoogleOverlayZumapro \
+        SettingsGoogleOverlayZumapro
+endif
